@@ -30,13 +30,18 @@ class City:
 cities = []
 
 def cityreader(cities=[]):
-    with open('cities.csv', 'r', newline="") as csvfile:
+    with open('32/Sprint-Challenge--Intro-Python/src/cityreader/cities.csv', 'r', newline="") as csvfile:
         csv_file = csv.reader(csvfile)
         next(csv_file)
         for c in csv_file:
             cities.append(City(c[0], float(c[3]), float(c[4])))
 
-    return cities            
+    # with open('cities.csv', 'r', newline="") as csvfile:
+    #     csv_file = csv.reader(csvfile)
+    #     for c in csv_file:
+    #         cities.append(City(c[0], c[3], c[4]))
+
+    # return cities            
 
 
 cityreader(cities)
